@@ -41,6 +41,7 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                                <button class="btn btn-primary waves-effect" type="cancel">BATAL</button>
                             </form>
                         </div>
                     </div>

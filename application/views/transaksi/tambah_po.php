@@ -25,22 +25,27 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="number" class="form-control" name="jumlah" required>
-                                        <label class="form-label">Jumlah Ekor</label>
+                                        <label class="form-label">Jumlah PO</label>
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="number" class="form-control" name="quantity" required>
-                                        <label class="form-label">Quantity (KG)</label>
+                                        <label class="form-label">Tagihan</label>
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="number" class="form-control" name="harga" required>
-                                        <label class="form-label">Harga</label>
-                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-control show-tick">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="10">Proses</option>
+                                            <option value="20">Diambil</option>
+                                            <option value="30">Sudah Setor</option>
+                                        </select>
                                 </div>
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                            <button class="btn btn-primary waves-effect" type="cancel">BATAL</button>
                             </form>
                         </div>
                     </div>
