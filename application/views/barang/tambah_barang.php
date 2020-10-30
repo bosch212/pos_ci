@@ -40,7 +40,7 @@
                                         <label class="form-label">Harga</label>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                                <button class="btn btn-primary waves-effect" type="submit" id="tombol">SUBMIT</button>
                                 <button class="btn btn-primary waves-effect" type="cancel">BATAL</button>
                             </form>
                         </div>
@@ -105,6 +105,8 @@
     <script src="<?=base_url('plugins/jquery-datatable/extensions/export/vfs_fonts.js');?>"></script>
     <script src="<?=base_url('plugins/jquery-datatable/extensions/export/buttons.html5.min.js');?>"></script>
     <script src="<?=base_url('plugins/jquery-datatable/extensions/export/buttons.print.min.js');?>"></script>
+
+    <script src="<?=base_url('https://unpkg.com/sweetalert/dist/sweetalert.min.js');?>"></script>
     
     <script type="text/javascript">
         $(document).ready(function(){
@@ -115,6 +117,32 @@
                 $('#datetime').datetimepicker();
             });
     </script>
+
+    // sweetalert
+
+    <script>
+    const tombol = document.querySelector('#tombol');
+    tombol.addEventListener('click', function(){
+        swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+        if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+        });
+    } else {
+        swal("Your imaginary file is safe!");
+    }
+    });
+    });
+    
+    </script>
+
 </body>
 
 </html>

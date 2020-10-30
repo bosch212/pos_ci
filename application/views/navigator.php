@@ -29,7 +29,7 @@
                 <ul class="list">
                     <li class="header">MENU ADMINISTRATOR</li>
                     <li class="<?= $menudashboard;?>">
-                        <a href="<?=base_url();?>">
+                        <a href="<?=base_url('Dashboardku');?>">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
@@ -41,7 +41,7 @@
                             <span>Data Barang</span>
                         </a>
                         <ul class="ml-menu">
-                            <li class="<?=$menudatamasteritem;?>"><a href="<?=base_url("barang");?>">Data Barang</a></li>
+                            <li class="<?=$menudatamasteritem;?>"><a href="<?=base_url("Barang");?>">Data Barang</a></li>
                         </ul>
                     </li>
 

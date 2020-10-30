@@ -81,9 +81,23 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- #END# Call Search -->
-                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                    <h5><span id="tanggalwaktu" style="color:white"></span></h5>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- #Top Bar -->
+
+    <script>
+        arrbulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+        date = new Date();
+        millisecond = date.getMilliseconds();
+        detik = date.getSeconds();
+        menit = date.getMinutes();
+        jam = date.getHours();
+        hari = date.getDay();
+        tanggal = date.getDate();
+        bulan = date.getMonth();
+        tahun = date.getFullYear();
+        document.getElementById('tanggalwaktu').innerHTML=(`${tanggal}-${arrbulan[bulan]}-${tahun} ${jam}:${menit}`);
+    </script> 
