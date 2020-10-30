@@ -40,9 +40,8 @@
                                         <label class="form-label">Harga</label>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <button class="btn btn-primary waves-effect" data-type="confirm">CLICK ME</button>
-                                </div>
+                                <button class="btn btn-primary waves-effect" type="submit" id="ubah">SUBMIT</button> 
+                                <button class="btn btn-primary waves-effect" type="cancel">BATAL</button>
                             </form>
                         </div>
                     </div>
@@ -115,6 +114,32 @@
             $(function () {
                 $('#datetime').datetimepicker();
             });
+    </script>
+
+    // sweetalert
+    <script src="<?=base_url('js/dist/sweetalert2.all.min.js');?>"></script>
+    <script>
+        const ubah = document.querySelector('#ubah');
+        ubah.addEventListener('click', function(){
+            Swal.fire({
+                title: 'Anda yakin ingin diubah?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Batal'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Ubah!',
+                    'Data telah berubah.',
+                    'success'
+                    )
+                }
+            })
+        })
+
     </script>
 </body>
 

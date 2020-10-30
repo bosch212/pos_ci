@@ -34,7 +34,7 @@
                                         <label class="form-label">Jumlah Setoran</label>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                                <button class="btn btn-primary waves-effect" type="submit" id="kirim">SUBMIT</button>
                                 <button class="btn btn-primary waves-effect" type="cancel">BATAL</button>
                             </form>
                         </div>
@@ -108,6 +108,29 @@
             $(function () {
                 $('#datetime').datetimepicker();
             });
+    </script>
+
+    // sweetalert
+    <script src="<?=base_url('js/dist/sweetalert2.all.min.js');?>"></script>
+    <script>
+        const kirim =document.querySelector('#kirim');
+        kirim.addEventListener('click', function(){
+            Swal.fire({
+                title: 'Anda yakin ingin mengirim?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: `Simpan`,
+                denyButtonText: `Tidak Simpan`,
+                cancelButtonText: 'Batal'
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    Swal.fire('Simpan!', '', 'success')
+                } else if (result.isDenied) {
+                    Swal.fire('Tidak Tersimpan', '', 'info')
+                }
+            })
+        })
     </script>
 </body>
 

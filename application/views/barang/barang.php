@@ -48,8 +48,8 @@
                                                     Ubah
                                                 </span>
                                             </a>
-                                            <a href="<?php echo base_url('Barang/ubah_barang'); ?>">
-                                                <span type="button" class="btn btn-danger btn-sm" style="margin-bottom: 10px">
+                                            <a href="#">
+                                                <span type="button" class="btn btn-danger btn-sm" style="margin-bottom: 10px" id="hapus">
                                                     Hapus
                                                 </span>
                                             </a>
@@ -150,6 +150,32 @@
             $(function () {
                 $('#datetime').datetimepicker();
             });
+    </script>
+
+ <!-- sweetalert -->
+ <script src="<?=base_url('js/dist/sweetalert2.all.min.js');?>"></script>
+    <script>
+        const hapus = document.querySelector('#hapus');
+        hapus.addEventListener('click', function(){
+            Swal.fire({
+                title: 'Anda yakin ingin hapus?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Batal'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Hapus!',
+                    'Data telah dihapus.',
+                    'success'
+                    )
+                }
+            })
+        })
+
     </script>
 </body>
 

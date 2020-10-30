@@ -40,7 +40,7 @@
                                         <label class="form-label">Harga</label>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary waves-effect" type="submit" id="tombol">SUBMIT</button>
+                                <button class="btn btn-primary waves-effect" type="submit" id="kirim">SUBMIT</button>
                                 <button class="btn btn-primary waves-effect" type="cancel">BATAL</button>
                             </form>
                         </div>
@@ -119,28 +119,26 @@
     </script>
 
     // sweetalert
-
+    <script src="<?=base_url('js/dist/sweetalert2.all.min.js');?>"></script>
     <script>
-    const tombol = document.querySelector('#tombol');
-    tombol.addEventListener('click', function(){
-        swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-    })
-        .then((willDelete) => {
-        if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
-        });
-    } else {
-        swal("Your imaginary file is safe!");
-    }
-    });
-    });
-    
+        const tombol =document.querySelector('#kirim');
+        tombol.addEventListener('click', function(){
+            Swal.fire({
+                title: 'Anda yakin ingin mengirim?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: `Simpan`,
+                denyButtonText: `Tidak Simpan`,
+                cancelButtonText: 'Batal'
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    Swal.fire('Simpan!', '', 'success')
+                } else if (result.isDenied) {
+                    Swal.fire('Tidak Tersimpan', '', 'info')
+                }
+            })
+        })
     </script>
 
 </body>
